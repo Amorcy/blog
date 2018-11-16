@@ -3,8 +3,8 @@ title: 浅析WebSocket（二）
 tags: [前端, WebSocket]
 ---
 
-在上一篇文章[浅析WebSocket（一）](//amorcy.cc//2018/11/14/webSocket-1/)，我们了解到了WebSocket出现的背景，聪明的工程师们，为了能够实现前后端实时通讯，在WebSocket出现之前，还发明了Comet(Alex Russell发明的词儿)，他指的是一种更高级的Ajax技术（也经常被人们称为“服务端推送”）。Ajax是一种从页面向服务请求数据的技术，儿Comet则是一种副武器箱页面推送数据的技术，Comet能够让信息近乎实时的被推送到页面上，非常适合处理体育比赛的分数跟股票。它有两种实现方式，一种就是我们之前提到的长轮询，还有一种是HTTP流，感兴趣的同学可以参考[传送门](https://www.ibm.com/developerworks/cn/web/wa-lo-comet/index.html)了解它是如何实现的。
-
+在上一篇文章[浅析WebSocket（一）](//amorcy.cc//2018/11/14/webSocket-1/)，我们了解到了WebSocket出现的背景，聪明的工程师们，为了能够实现前后端实时通讯，在WebSocket出现之前，还发明了Comet(Alex Russell发明的词儿)，他指的是一种更高级的Ajax技术（也经常被人们称为“服务端推送”）。Ajax是一种从页面向服务请求数据的技术，而Comet则是一种服务器向页面推送数据的技术，Comet能够让信息近乎实时的被推送到页面上，非常适合处理体育比赛的分数跟股票。它有两种实现方式，一种就是我们之前提到的长轮询，还有一种是HTTP流，感兴趣的同学可以参考[传送门](https://www.ibm.com/developerworks/cn/web/wa-lo-comet/index.html)了解它是如何实现的。
+<!-- more -->
 ---
 WebSocket通信协议包含两个高层组件：开发性的HTTP握手用于协商连接参数、二进制消息分帧机制用于支持低开销的基于消息的文本和二进制数据传输。WebSocket 协议尝试在既有HTTP 基础设施中实现双向HTTP 通信，因此也使用HTTP 的80 和443 端口。不过，这个设计不限于通过HTTP 实现WebSocket 通信，未来的实现可以在某个专用端口上使用更简单的握手，而不必重新定义一个协议。WebSocket 协议是一个独立完善的协议，可以在浏览器之外实现。不过，它的主要应用目标还是实现浏览器应用的双向通信。
 
@@ -36,7 +36,7 @@ WebSocket通信协议包含两个高层组件：开发性的HTTP握手用于协�
 
 ---
 以上请求头跟响应头如果主要字段都没有出差错，那么本次连接则从HTTP连接升级到了WebSocket连接了。现在客户端就可以通过WebSocketAPI来接收服务端推送的消息了
-```
+```JS
 // 创建WebSocket连接
 const ws = new WebSocket('ws://WebSocket-example:8081')
 const reader = new FileReader()
