@@ -77,7 +77,7 @@ theme: yilia
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/Amorcy/Amorcy.github.io.git  #这里的网址填你自己的
+  repo: https://github.com/Amorcy/Amorcy.github.io.git
   branch: master 
 jsonContent:
     meta: false
