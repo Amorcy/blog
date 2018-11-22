@@ -1,7 +1,7 @@
 ---
 title: 使用webpack.require优化vue项目的路由
 tags: [前端, Vue, VueRouter]
-date: 2017-11-15
+date: 2017-07-06
 ---
 在使用Vue做后台管理项目的时候，项目前期,只需要维护几个路由页面即可。
 在`router.js`文件中使用以下写法即可。

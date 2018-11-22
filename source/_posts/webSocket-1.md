@@ -1,6 +1,7 @@
 ---
 title: 浅析WebSocket（一）
 tags: [前端, WebSocket]
+date: 2018-10-21
 ---
 在了解WebSocket之前，我们首先需要知道长连接，短连接，长轮询及短轮询。
 - 长连接
